@@ -1,0 +1,24 @@
+{
+    "name": "backbone-boilerplate",
+    "dependencies": {
+        "jquery": null,
+        "almond": null,
+        "underscore": null,
+        "requirejs": null,
+        "backbone": null,
+        "bootstrap": null,
+        "pace":null,
+        "requirejs-text": null,
+        "qunit": null,
+        "mocha":null,
+        "chai":null,
+        "chai-jquery": null,
+        "assert": null,
+        "sinon" : null
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "components"
+    ]
+}
