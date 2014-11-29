@@ -1,1 +1,0 @@
-(function(){define("dashboard/main",["backbone"],function(e){var t=e.View.extend({template:_.template("<h2>Dashboard</h2><%= greeting %>"),initialize:function(){this.render()},render:function(){return this.$el.html(this.template({greeting:"Welcome to dashboard page"})),this}});return t})})();
