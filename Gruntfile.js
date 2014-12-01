@@ -92,8 +92,8 @@ module.exports = function(grunt) {
             },
             src: 'production',
             dest: 'Scripts/test',
-            exclusions: ['.bowerrc','bower.json','build.txt']
-            // simple: false,
+            exclusions: ['.bowerrc','bower.json','build.txt'],
+            simple: true,
             // useList: false
             // keep: ['/important/images/at/server/*.jpg']
           }
