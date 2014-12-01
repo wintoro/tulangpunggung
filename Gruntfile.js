@@ -82,17 +82,21 @@ module.exports = function(grunt) {
                 }
             }
         },
-        'ftp-deploy': {
-            upload: {
-                auth: {
-                    host: 'iflexinspira.com',
-                    port: 21,
-                    authKey: 'key1',
-                    authPath: '.ftpConfig'
-                },
-                src: 'production',
-                dest: 'public_html/aboutbatam.com'
-            }
+        ftpush: {
+          build: {
+            auth: {
+              host: '202.57.11.147',
+              port: 210,
+              authKey: 'key2',
+              authPath: '.ftpcpass'
+            },
+            src: 'production',
+            dest: 'Scripts/test',
+            exclusions: ['.bowerrc','bower.json','build.txt']
+            // simple: false,
+            // useList: false
+            // keep: ['/important/images/at/server/*.jpg']
+          }
         }
     });
     grunt.file.defaultEncoding = 'utf8';
@@ -100,9 +104,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-ftp-deploy');
     grunt.loadNpmTasks('grunt-mocha');
     grunt.loadNpmTasks('grunt-processhtml');
+    grunt.loadNpmTasks('grunt-ftpush');
     // grunt.loadNpmTasks('grunt-text-replace');
     // grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.registerTask(
@@ -111,7 +115,7 @@ module.exports = function(grunt) {
         'clean',
         'jshint',
         'requirejs',
-        'mocha'
-        // 'ftp-deploy'
+        'mocha',
+        'ftpush'
     ]);
 };
